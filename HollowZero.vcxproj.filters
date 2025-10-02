@@ -13,5 +13,489 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="资源文件\player">
+      <UniqueIdentifier>{1a3050fe-8025-4243-bce5-06ed401dad92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy">
+      <UniqueIdentifier>{8ec82f6e-0ad3-4588-b810-cba761a4954a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\aim">
+      <UniqueIdentifier>{61c4709e-4a43-4335-96cd-2682323c86cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\barb_break">
+      <UniqueIdentifier>{eb226a1c-d131-4b4a-9902-d26a761fddd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\barb_loose">
+      <UniqueIdentifier>{6584d29a-335b-46d1-ba02-f6da4839db5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\dash_in_air">
+      <UniqueIdentifier>{9e0724c3-c6ad-4bcc-82ba-6918c22e1c6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\dash_on_floor">
+      <UniqueIdentifier>{b917769a-4e02-4add-bd3e-880005663ecb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\fall">
+      <UniqueIdentifier>{00f4aad5-1375-4ee2-9a39-ad7b7f82231d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\idle">
+      <UniqueIdentifier>{ec5c8e9b-00c5-4e71-9ab8-7d11b10f1dc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\jump">
+      <UniqueIdentifier>{38910a10-2262-4deb-ae41-738b4f1b09cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\run">
+      <UniqueIdentifier>{ba7388a3-c84d-48bb-aaa6-d3e7269f6fa3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\silk">
+      <UniqueIdentifier>{d9193863-4cd3-4f97-a223-fbdc6c903c28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\squat">
+      <UniqueIdentifier>{bf1d1d15-d1cf-432f-bd71-3cbbd2d074cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\sword">
+      <UniqueIdentifier>{76408d30-1e77-4e12-be89-ec7159dc2cb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\throw_barb">
+      <UniqueIdentifier>{4b1d15ff-1752-4ab9-ac45-38e282a0f505}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\thorw_silk">
+      <UniqueIdentifier>{9d1de94b-d077-4942-8419-8e99cbf7dce2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\throw_sword">
+      <UniqueIdentifier>{d23bef79-391f-4fe1-888b-038ceca6b210}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\vfx_dash_in_air">
+      <UniqueIdentifier>{ca6be8b7-6b51-4c64-9e66-23ef37bc944d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\enemy\vfx_dash_on_floor">
+      <UniqueIdentifier>{1bfa5f17-8380-4ef2-879e-e3f551896a07}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="timer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vector2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atlas.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="animation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\background.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="resources\ui_heart.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="resources\player\attack.png">
+      <Filter>资源文件\player</Filter>
+    </Image>
+    <Image Include="resources\player\dead.png">
+      <Filter>资源文件\player</Filter>
+    </Image>
+    <Image Include="resources\player\fall.png">
+      <Filter>资源文件\player</Filter>
+    </Image>
+    <Image Include="resources\player\idle.png">
+      <Filter>资源文件\player</Filter>
+    </Image>
+    <Image Include="resources\player\jump.png">
+      <Filter>资源文件\player</Filter>
+    </Image>
+    <Image Include="resources\player\roll.png">
+      <Filter>资源文件\player</Filter>
+    </Image>
+    <Image Include="resources\player\run.png">
+      <Filter>资源文件\player</Filter>
+    </Image>
+    <Image Include="resources\player\vfx_attack_down.png">
+      <Filter>资源文件\player</Filter>
+    </Image>
+    <Image Include="resources\player\vfx_attack_left.png">
+      <Filter>资源文件\player</Filter>
+    </Image>
+    <Image Include="resources\player\vfx_attack_right.png">
+      <Filter>资源文件\player</Filter>
+    </Image>
+    <Image Include="resources\player\vfx_attack_up.png">
+      <Filter>资源文件\player</Filter>
+    </Image>
+    <Image Include="resources\player\vfx_jump.png">
+      <Filter>资源文件\player</Filter>
+    </Image>
+    <Image Include="resources\player\vfx_land.png">
+      <Filter>资源文件\player</Filter>
+    </Image>
+    <Image Include="resources\enemy\aim\1.png">
+      <Filter>资源文件\enemy\aim</Filter>
+    </Image>
+    <Image Include="resources\enemy\aim\2.png">
+      <Filter>资源文件\enemy\aim</Filter>
+    </Image>
+    <Image Include="resources\enemy\aim\3.png">
+      <Filter>资源文件\enemy\aim</Filter>
+    </Image>
+    <Image Include="resources\enemy\aim\4.png">
+      <Filter>资源文件\enemy\aim</Filter>
+    </Image>
+    <Image Include="resources\enemy\aim\5.png">
+      <Filter>资源文件\enemy\aim</Filter>
+    </Image>
+    <Image Include="resources\enemy\aim\6.png">
+      <Filter>资源文件\enemy\aim</Filter>
+    </Image>
+    <Image Include="resources\enemy\aim\7.png">
+      <Filter>资源文件\enemy\aim</Filter>
+    </Image>
+    <Image Include="resources\enemy\aim\8.png">
+      <Filter>资源文件\enemy\aim</Filter>
+    </Image>
+    <Image Include="resources\enemy\aim\9.png">
+      <Filter>资源文件\enemy\aim</Filter>
+    </Image>
+    <Image Include="resources\enemy\barb_break\1.png">
+      <Filter>资源文件\enemy\barb_break</Filter>
+    </Image>
+    <Image Include="resources\enemy\barb_break\2.png">
+      <Filter>资源文件\enemy\barb_break</Filter>
+    </Image>
+    <Image Include="resources\enemy\barb_break\3.png">
+      <Filter>资源文件\enemy\barb_break</Filter>
+    </Image>
+    <Image Include="resources\enemy\barb_loose\1.png">
+      <Filter>资源文件\enemy\barb_loose</Filter>
+    </Image>
+    <Image Include="resources\enemy\barb_loose\2.png">
+      <Filter>资源文件\enemy\barb_loose</Filter>
+    </Image>
+    <Image Include="resources\enemy\barb_loose\3.png">
+      <Filter>资源文件\enemy\barb_loose</Filter>
+    </Image>
+    <Image Include="resources\enemy\barb_loose\4.png">
+      <Filter>资源文件\enemy\barb_loose</Filter>
+    </Image>
+    <Image Include="resources\enemy\barb_loose\5.png">
+      <Filter>资源文件\enemy\barb_loose</Filter>
+    </Image>
+    <Image Include="resources\enemy\dash_in_air\1.png">
+      <Filter>资源文件\enemy\dash_in_air</Filter>
+    </Image>
+    <Image Include="resources\enemy\dash_in_air\2.png">
+      <Filter>资源文件\enemy\dash_in_air</Filter>
+    </Image>
+    <Image Include="resources\enemy\dash_on_floor\1.png">
+      <Filter>资源文件\enemy\dash_on_floor</Filter>
+    </Image>
+    <Image Include="resources\enemy\dash_on_floor\2.png">
+      <Filter>资源文件\enemy\dash_on_floor</Filter>
+    </Image>
+    <Image Include="resources\enemy\fall\1.png">
+      <Filter>资源文件\enemy\fall</Filter>
+    </Image>
+    <Image Include="resources\enemy\fall\2.png">
+      <Filter>资源文件\enemy\fall</Filter>
+    </Image>
+    <Image Include="resources\enemy\fall\3.png">
+      <Filter>资源文件\enemy\fall</Filter>
+    </Image>
+    <Image Include="resources\enemy\fall\4.png">
+      <Filter>资源文件\enemy\fall</Filter>
+    </Image>
+    <Image Include="resources\enemy\idle\1.png">
+      <Filter>资源文件\enemy\idle</Filter>
+    </Image>
+    <Image Include="resources\enemy\idle\2.png">
+      <Filter>资源文件\enemy\idle</Filter>
+    </Image>
+    <Image Include="resources\enemy\idle\3.png">
+      <Filter>资源文件\enemy\idle</Filter>
+    </Image>
+    <Image Include="resources\enemy\idle\4.png">
+      <Filter>资源文件\enemy\idle</Filter>
+    </Image>
+    <Image Include="resources\enemy\idle\5.png">
+      <Filter>资源文件\enemy\idle</Filter>
+    </Image>
+    <Image Include="resources\enemy\idle\6.png">
+      <Filter>资源文件\enemy\idle</Filter>
+    </Image>
+    <Image Include="resources\enemy\jump\1.png">
+      <Filter>资源文件\enemy\jump</Filter>
+    </Image>
+    <Image Include="resources\enemy\jump\2.png">
+      <Filter>资源文件\enemy\jump</Filter>
+    </Image>
+    <Image Include="resources\enemy\jump\3.png">
+      <Filter>资源文件\enemy\jump</Filter>
+    </Image>
+    <Image Include="resources\enemy\jump\4.png">
+      <Filter>资源文件\enemy\jump</Filter>
+    </Image>
+    <Image Include="resources\enemy\jump\5.png">
+      <Filter>资源文件\enemy\jump</Filter>
+    </Image>
+    <Image Include="resources\enemy\jump\6.png">
+      <Filter>资源文件\enemy\jump</Filter>
+    </Image>
+    <Image Include="resources\enemy\jump\7.png">
+      <Filter>资源文件\enemy\jump</Filter>
+    </Image>
+    <Image Include="resources\enemy\jump\8.png">
+      <Filter>资源文件\enemy\jump</Filter>
+    </Image>
+    <Image Include="resources\enemy\run\1.png">
+      <Filter>资源文件\enemy\run</Filter>
+    </Image>
+    <Image Include="resources\enemy\run\2.png">
+      <Filter>资源文件\enemy\run</Filter>
+    </Image>
+    <Image Include="resources\enemy\run\3.png">
+      <Filter>资源文件\enemy\run</Filter>
+    </Image>
+    <Image Include="resources\enemy\run\4.png">
+      <Filter>资源文件\enemy\run</Filter>
+    </Image>
+    <Image Include="resources\enemy\run\5.png">
+      <Filter>资源文件\enemy\run</Filter>
+    </Image>
+    <Image Include="resources\enemy\run\6.png">
+      <Filter>资源文件\enemy\run</Filter>
+    </Image>
+    <Image Include="resources\enemy\run\7.png">
+      <Filter>资源文件\enemy\run</Filter>
+    </Image>
+    <Image Include="resources\enemy\run\8.png">
+      <Filter>资源文件\enemy\run</Filter>
+    </Image>
+    <Image Include="resources\enemy\silk\1.png">
+      <Filter>资源文件\enemy\silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\silk\2.png">
+      <Filter>资源文件\enemy\silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\silk\3.png">
+      <Filter>资源文件\enemy\silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\silk\4.png">
+      <Filter>资源文件\enemy\silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\silk\5.png">
+      <Filter>资源文件\enemy\silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\silk\6.png">
+      <Filter>资源文件\enemy\silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\silk\7.png">
+      <Filter>资源文件\enemy\silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\silk\8.png">
+      <Filter>资源文件\enemy\silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\silk\9.png">
+      <Filter>资源文件\enemy\silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\squat\1.png">
+      <Filter>资源文件\enemy\squat</Filter>
+    </Image>
+    <Image Include="resources\enemy\squat\2.png">
+      <Filter>资源文件\enemy\squat</Filter>
+    </Image>
+    <Image Include="resources\enemy\squat\3.png">
+      <Filter>资源文件\enemy\squat</Filter>
+    </Image>
+    <Image Include="resources\enemy\squat\4.png">
+      <Filter>资源文件\enemy\squat</Filter>
+    </Image>
+    <Image Include="resources\enemy\squat\5.png">
+      <Filter>资源文件\enemy\squat</Filter>
+    </Image>
+    <Image Include="resources\enemy\squat\6.png">
+      <Filter>资源文件\enemy\squat</Filter>
+    </Image>
+    <Image Include="resources\enemy\squat\7.png">
+      <Filter>资源文件\enemy\squat</Filter>
+    </Image>
+    <Image Include="resources\enemy\squat\8.png">
+      <Filter>资源文件\enemy\squat</Filter>
+    </Image>
+    <Image Include="resources\enemy\squat\9.png">
+      <Filter>资源文件\enemy\squat</Filter>
+    </Image>
+    <Image Include="resources\enemy\squat\10.png">
+      <Filter>资源文件\enemy\squat</Filter>
+    </Image>
+    <Image Include="resources\enemy\sword\1.png">
+      <Filter>资源文件\enemy\sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\sword\2.png">
+      <Filter>资源文件\enemy\sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\sword\3.png">
+      <Filter>资源文件\enemy\sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_barb\1.png">
+      <Filter>资源文件\enemy\throw_barb</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_barb\2.png">
+      <Filter>资源文件\enemy\throw_barb</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_barb\3.png">
+      <Filter>资源文件\enemy\throw_barb</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_barb\4.png">
+      <Filter>资源文件\enemy\throw_barb</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_barb\5.png">
+      <Filter>资源文件\enemy\throw_barb</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_barb\6.png">
+      <Filter>资源文件\enemy\throw_barb</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_barb\7.png">
+      <Filter>资源文件\enemy\throw_barb</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_barb\8.png">
+      <Filter>资源文件\enemy\throw_barb</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\1.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\2.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\3.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\4.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\5.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\6.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\7.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\8.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\9.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\10.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\11.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\12.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\13.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\14.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\15.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\16.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_silk\17.png">
+      <Filter>资源文件\enemy\thorw_silk</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_sword\1.png">
+      <Filter>资源文件\enemy\throw_sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_sword\2.png">
+      <Filter>资源文件\enemy\throw_sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_sword\3.png">
+      <Filter>资源文件\enemy\throw_sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_sword\4.png">
+      <Filter>资源文件\enemy\throw_sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_sword\5.png">
+      <Filter>资源文件\enemy\throw_sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_sword\6.png">
+      <Filter>资源文件\enemy\throw_sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_sword\7.png">
+      <Filter>资源文件\enemy\throw_sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_sword\8.png">
+      <Filter>资源文件\enemy\throw_sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_sword\9.png">
+      <Filter>资源文件\enemy\throw_sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_sword\10.png">
+      <Filter>资源文件\enemy\throw_sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_sword\11.png">
+      <Filter>资源文件\enemy\throw_sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_sword\12.png">
+      <Filter>资源文件\enemy\throw_sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_sword\13.png">
+      <Filter>资源文件\enemy\throw_sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_sword\14.png">
+      <Filter>资源文件\enemy\throw_sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_sword\15.png">
+      <Filter>资源文件\enemy\throw_sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\throw_sword\16.png">
+      <Filter>资源文件\enemy\throw_sword</Filter>
+    </Image>
+    <Image Include="resources\enemy\vfx_dash_in_air\1.png">
+      <Filter>资源文件\enemy\vfx_dash_in_air</Filter>
+    </Image>
+    <Image Include="resources\enemy\vfx_dash_in_air\2.png">
+      <Filter>资源文件\enemy\vfx_dash_in_air</Filter>
+    </Image>
+    <Image Include="resources\enemy\vfx_dash_in_air\3.png">
+      <Filter>资源文件\enemy\vfx_dash_in_air</Filter>
+    </Image>
+    <Image Include="resources\enemy\vfx_dash_in_air\4.png">
+      <Filter>资源文件\enemy\vfx_dash_in_air</Filter>
+    </Image>
+    <Image Include="resources\enemy\vfx_dash_in_air\5.png">
+      <Filter>资源文件\enemy\vfx_dash_in_air</Filter>
+    </Image>
+    <Image Include="resources\enemy\vfx_dash_on_floor\1.png">
+      <Filter>资源文件\enemy\vfx_dash_on_floor</Filter>
+    </Image>
+    <Image Include="resources\enemy\vfx_dash_on_floor\2.png">
+      <Filter>资源文件\enemy\vfx_dash_on_floor</Filter>
+    </Image>
+    <Image Include="resources\enemy\vfx_dash_on_floor\3.png">
+      <Filter>资源文件\enemy\vfx_dash_on_floor</Filter>
+    </Image>
+    <Image Include="resources\enemy\vfx_dash_on_floor\4.png">
+      <Filter>资源文件\enemy\vfx_dash_on_floor</Filter>
+    </Image>
+    <Image Include="resources\enemy\vfx_dash_on_floor\5.png">
+      <Filter>资源文件\enemy\vfx_dash_on_floor</Filter>
+    </Image>
+    <Image Include="resources\enemy\vfx_dash_on_floor\6.png">
+      <Filter>资源文件\enemy\vfx_dash_on_floor</Filter>
+    </Image>
   </ItemGroup>
 </Project>

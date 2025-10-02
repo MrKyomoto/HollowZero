@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -17,7 +17,6 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -53,27 +52,24 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
-
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Label="Shared" >
+  <ImportGroup Label="Shared">
   </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-      <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    </ImportGroup>
-
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -130,8 +126,151 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="animation.h" />
+    <ClInclude Include="atlas.h" />
+    <ClInclude Include="timer.h" />
+    <ClInclude Include="util.h" />
+    <ClInclude Include="vector2.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\background.png" />
+    <Image Include="resources\enemy\aim\1.png" />
+    <Image Include="resources\enemy\aim\2.png" />
+    <Image Include="resources\enemy\aim\3.png" />
+    <Image Include="resources\enemy\aim\4.png" />
+    <Image Include="resources\enemy\aim\5.png" />
+    <Image Include="resources\enemy\aim\6.png" />
+    <Image Include="resources\enemy\aim\7.png" />
+    <Image Include="resources\enemy\aim\8.png" />
+    <Image Include="resources\enemy\aim\9.png" />
+    <Image Include="resources\enemy\barb_break\1.png" />
+    <Image Include="resources\enemy\barb_break\2.png" />
+    <Image Include="resources\enemy\barb_break\3.png" />
+    <Image Include="resources\enemy\barb_loose\1.png" />
+    <Image Include="resources\enemy\barb_loose\2.png" />
+    <Image Include="resources\enemy\barb_loose\3.png" />
+    <Image Include="resources\enemy\barb_loose\4.png" />
+    <Image Include="resources\enemy\barb_loose\5.png" />
+    <Image Include="resources\enemy\dash_in_air\1.png" />
+    <Image Include="resources\enemy\dash_in_air\2.png" />
+    <Image Include="resources\enemy\dash_on_floor\1.png" />
+    <Image Include="resources\enemy\dash_on_floor\2.png" />
+    <Image Include="resources\enemy\fall\1.png" />
+    <Image Include="resources\enemy\fall\2.png" />
+    <Image Include="resources\enemy\fall\3.png" />
+    <Image Include="resources\enemy\fall\4.png" />
+    <Image Include="resources\enemy\idle\1.png" />
+    <Image Include="resources\enemy\idle\2.png" />
+    <Image Include="resources\enemy\idle\3.png" />
+    <Image Include="resources\enemy\idle\4.png" />
+    <Image Include="resources\enemy\idle\5.png" />
+    <Image Include="resources\enemy\idle\6.png" />
+    <Image Include="resources\enemy\jump\1.png" />
+    <Image Include="resources\enemy\jump\2.png" />
+    <Image Include="resources\enemy\jump\3.png" />
+    <Image Include="resources\enemy\jump\4.png" />
+    <Image Include="resources\enemy\jump\5.png" />
+    <Image Include="resources\enemy\jump\6.png" />
+    <Image Include="resources\enemy\jump\7.png" />
+    <Image Include="resources\enemy\jump\8.png" />
+    <Image Include="resources\enemy\run\1.png" />
+    <Image Include="resources\enemy\run\2.png" />
+    <Image Include="resources\enemy\run\3.png" />
+    <Image Include="resources\enemy\run\4.png" />
+    <Image Include="resources\enemy\run\5.png" />
+    <Image Include="resources\enemy\run\6.png" />
+    <Image Include="resources\enemy\run\7.png" />
+    <Image Include="resources\enemy\run\8.png" />
+    <Image Include="resources\enemy\silk\1.png" />
+    <Image Include="resources\enemy\silk\2.png" />
+    <Image Include="resources\enemy\silk\3.png" />
+    <Image Include="resources\enemy\silk\4.png" />
+    <Image Include="resources\enemy\silk\5.png" />
+    <Image Include="resources\enemy\silk\6.png" />
+    <Image Include="resources\enemy\silk\7.png" />
+    <Image Include="resources\enemy\silk\8.png" />
+    <Image Include="resources\enemy\silk\9.png" />
+    <Image Include="resources\enemy\squat\1.png" />
+    <Image Include="resources\enemy\squat\10.png" />
+    <Image Include="resources\enemy\squat\2.png" />
+    <Image Include="resources\enemy\squat\3.png" />
+    <Image Include="resources\enemy\squat\4.png" />
+    <Image Include="resources\enemy\squat\5.png" />
+    <Image Include="resources\enemy\squat\6.png" />
+    <Image Include="resources\enemy\squat\7.png" />
+    <Image Include="resources\enemy\squat\8.png" />
+    <Image Include="resources\enemy\squat\9.png" />
+    <Image Include="resources\enemy\sword\1.png" />
+    <Image Include="resources\enemy\sword\2.png" />
+    <Image Include="resources\enemy\sword\3.png" />
+    <Image Include="resources\enemy\throw_barb\1.png" />
+    <Image Include="resources\enemy\throw_barb\2.png" />
+    <Image Include="resources\enemy\throw_barb\3.png" />
+    <Image Include="resources\enemy\throw_barb\4.png" />
+    <Image Include="resources\enemy\throw_barb\5.png" />
+    <Image Include="resources\enemy\throw_barb\6.png" />
+    <Image Include="resources\enemy\throw_barb\7.png" />
+    <Image Include="resources\enemy\throw_barb\8.png" />
+    <Image Include="resources\enemy\throw_silk\1.png" />
+    <Image Include="resources\enemy\throw_silk\10.png" />
+    <Image Include="resources\enemy\throw_silk\11.png" />
+    <Image Include="resources\enemy\throw_silk\12.png" />
+    <Image Include="resources\enemy\throw_silk\13.png" />
+    <Image Include="resources\enemy\throw_silk\14.png" />
+    <Image Include="resources\enemy\throw_silk\15.png" />
+    <Image Include="resources\enemy\throw_silk\16.png" />
+    <Image Include="resources\enemy\throw_silk\17.png" />
+    <Image Include="resources\enemy\throw_silk\2.png" />
+    <Image Include="resources\enemy\throw_silk\3.png" />
+    <Image Include="resources\enemy\throw_silk\4.png" />
+    <Image Include="resources\enemy\throw_silk\5.png" />
+    <Image Include="resources\enemy\throw_silk\6.png" />
+    <Image Include="resources\enemy\throw_silk\7.png" />
+    <Image Include="resources\enemy\throw_silk\8.png" />
+    <Image Include="resources\enemy\throw_silk\9.png" />
+    <Image Include="resources\enemy\throw_sword\1.png" />
+    <Image Include="resources\enemy\throw_sword\10.png" />
+    <Image Include="resources\enemy\throw_sword\11.png" />
+    <Image Include="resources\enemy\throw_sword\12.png" />
+    <Image Include="resources\enemy\throw_sword\13.png" />
+    <Image Include="resources\enemy\throw_sword\14.png" />
+    <Image Include="resources\enemy\throw_sword\15.png" />
+    <Image Include="resources\enemy\throw_sword\16.png" />
+    <Image Include="resources\enemy\throw_sword\2.png" />
+    <Image Include="resources\enemy\throw_sword\3.png" />
+    <Image Include="resources\enemy\throw_sword\4.png" />
+    <Image Include="resources\enemy\throw_sword\5.png" />
+    <Image Include="resources\enemy\throw_sword\6.png" />
+    <Image Include="resources\enemy\throw_sword\7.png" />
+    <Image Include="resources\enemy\throw_sword\8.png" />
+    <Image Include="resources\enemy\throw_sword\9.png" />
+    <Image Include="resources\enemy\vfx_dash_in_air\1.png" />
+    <Image Include="resources\enemy\vfx_dash_in_air\2.png" />
+    <Image Include="resources\enemy\vfx_dash_in_air\3.png" />
+    <Image Include="resources\enemy\vfx_dash_in_air\4.png" />
+    <Image Include="resources\enemy\vfx_dash_in_air\5.png" />
+    <Image Include="resources\enemy\vfx_dash_on_floor\1.png" />
+    <Image Include="resources\enemy\vfx_dash_on_floor\2.png" />
+    <Image Include="resources\enemy\vfx_dash_on_floor\3.png" />
+    <Image Include="resources\enemy\vfx_dash_on_floor\4.png" />
+    <Image Include="resources\enemy\vfx_dash_on_floor\5.png" />
+    <Image Include="resources\enemy\vfx_dash_on_floor\6.png" />
+    <Image Include="resources\player\attack.png" />
+    <Image Include="resources\player\dead.png" />
+    <Image Include="resources\player\fall.png" />
+    <Image Include="resources\player\idle.png" />
+    <Image Include="resources\player\jump.png" />
+    <Image Include="resources\player\roll.png" />
+    <Image Include="resources\player\run.png" />
+    <Image Include="resources\player\vfx_attack_down.png" />
+    <Image Include="resources\player\vfx_attack_left.png" />
+    <Image Include="resources\player\vfx_attack_right.png" />
+    <Image Include="resources\player\vfx_attack_up.png" />
+    <Image Include="resources\player\vfx_jump.png" />
+    <Image Include="resources\player\vfx_land.png" />
+    <Image Include="resources\ui_heart.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
