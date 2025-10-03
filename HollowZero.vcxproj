@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="animation.h" />
     <ClInclude Include="atlas.h" />
+    <ClInclude Include="resources_manager.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="util.h" />
     <ClInclude Include="vector2.h" />
@@ -270,6 +271,9 @@
     <Image Include="resources\player\vfx_jump.png" />
     <Image Include="resources\player\vfx_land.png" />
     <Image Include="resources\ui_heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="resources_manager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

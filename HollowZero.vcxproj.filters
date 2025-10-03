@@ -87,6 +87,9 @@
     <ClInclude Include="animation.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="resources_manager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\background.png">
@@ -497,5 +500,10 @@
     <Image Include="resources\enemy\vfx_dash_on_floor\6.png">
       <Filter>资源文件\enemy\vfx_dash_on_floor</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="resources_manager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
