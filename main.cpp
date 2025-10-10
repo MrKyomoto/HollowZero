@@ -3,6 +3,21 @@
 #include <chrono>
 #include <thread>
 
+// NOTE: 给函数声明static是修饰该函数成为局部函数,即使使用extern也无法被外部调用
+// 这是为了防止命名冲突
+static void draw_background() {
+	// NOTE: 而内部的static修饰的变量则是仅在一开始声明一次,生命周期跟程序一样长,后续再调用该函数,这些变量无需再次声明
+	static IMAGE* img_background = ResourcesManager::instance()->find_image("background");
+	static Rect rect_dst = {
+		// x,y,w,h, (x,y)是左上角的点
+		(getwidth() - img_background->getwidth()) / 2,
+		(getheight() - img_background->getheight()) / 2,
+		img_background->getwidth(),
+		img_background->getheight(),
+	};
+	putimage_ex(img_background, &rect_dst);
+}
+
 int main(int argc, char** argv) {
 	using namespace std::chrono;
 	HWND hwnd = initgraph(1280, 720, EW_SHOWCONSOLE);
@@ -25,6 +40,8 @@ int main(int argc, char** argv) {
 	ExMessage msg;
 	bool is_quit = false;
 
+	BeginBatchDraw();
+
 	while (!is_quit) {
 		while (peekmessage(&msg)) {
 			// process msg
@@ -38,6 +55,7 @@ int main(int argc, char** argv) {
 		cleardevice();
 
 		// process draw
+		draw_background();
 
 		FlushBatchDraw();
 		last_tick = frame_start;
