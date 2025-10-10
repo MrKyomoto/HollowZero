@@ -51,11 +51,11 @@ static const std::vector<AtlasResInfo> atlas_info_list = {
 	{"barb_break",_T(R"(resources\enemy\barb_break\%d.png)"),3},
 	{"barb_loose",_T(R"(resources\enemy\barb_loose\%d.png)"),5},
 	{"silk",_T(R"(resources\enemy\silk\%d.png)"),			 9},
-	{"sword_left",_T(R"(resources\enemy\sowrd\%d.png)"),	 3},
+	{"sword_left",_T(R"(resources\enemy\sword\%d.png)"),	 3},
 
 	{"enemy_aim_left",_T(R"(resources\enemy\aim\%d.png)"),						 9},
 	{"enemy_dash_in_air_left",_T(R"(resources\enemy\dash_in_air\%d.png)"),		 2},
-	{"enemy_dash_on_floor_left",_T(R"(resources\enemy\dash_on_air\%d.png)"),	 2},
+	{"enemy_dash_on_floor_left",_T(R"(resources\enemy\dash_on_floor\%d.png)"),	 2},
 	{"enemy_fall_left",_T(R"(resources\enemy\fall\%d.png)"),					 4},
 	{"enemy_idle_left",_T(R"(resources\enemy\idle\%d.png)"),					 6},
 	{"enemy_jump_left",_T(R"(resources\enemy\jump\%d.png)"),					 8},
@@ -63,7 +63,7 @@ static const std::vector<AtlasResInfo> atlas_info_list = {
 	{"enemy_squat_left",_T(R"(resources\enemy\squat\%d.png)"),					 10},
 	{"enemy_throw_barb_left",_T(R"(resources\enemy\throw_barb\%d.png)"),		 8},
 	{"enemy_throw_silk_left",_T(R"(resources\enemy\throw_silk\%d.png)"),		 17},
-	{"enemy_throw_sword_left",_T(R"(resources\enemy\thorw_sword\%d.png)"),		 16},
+	{"enemy_throw_sword_left",_T(R"(resources\enemy\throw_sword\%d.png)"),		 16},
 
 	{"enemy_vfx_dash_in_air_left",_T(R"(resources\enemy\vfx_dash_in_air\%d.png)"),5},
 	{"enemy_vfx_dash_on_floor_left",_T(R"(resources\enemy\vfx_dash_on_floor\%d.png)"),		 6},
