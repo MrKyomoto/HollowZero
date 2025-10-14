@@ -108,6 +108,9 @@
     <ClInclude Include="character.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\background.png">
