@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="animation.h" />
     <ClInclude Include="atlas.h" />
+    <ClInclude Include="character.h" />
     <ClInclude Include="collision_box.h" />
     <ClInclude Include="collision_layer.h" />
     <ClInclude Include="collision_manager.h" />
@@ -278,6 +279,7 @@
     <Image Include="resources\ui_heart.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="character.cpp" />
     <ClCompile Include="collision_manager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="resources_manager.cpp" />

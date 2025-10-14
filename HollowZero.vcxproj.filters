@@ -105,6 +105,9 @@
     <ClInclude Include="state_machine.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="character.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\background.png">
@@ -527,6 +530,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="state_machine.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="character.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
