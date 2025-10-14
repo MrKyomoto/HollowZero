@@ -133,6 +133,7 @@
     <ClInclude Include="collision_layer.h" />
     <ClInclude Include="collision_manager.h" />
     <ClInclude Include="resources_manager.h" />
+    <ClInclude Include="state_node.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="util.h" />
     <ClInclude Include="vector2.h" />

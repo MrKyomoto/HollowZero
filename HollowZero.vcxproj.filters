@@ -99,6 +99,9 @@
     <ClInclude Include="collision_manager.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="state_node.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\background.png">
