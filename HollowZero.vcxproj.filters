@@ -90,6 +90,15 @@
     <ClInclude Include="resources_manager.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="collision_layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="collision_box.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="collision_manager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\background.png">
@@ -503,6 +512,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="resources_manager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="collision_manager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
