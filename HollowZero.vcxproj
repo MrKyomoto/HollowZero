@@ -283,6 +283,7 @@
     <ClCompile Include="character.cpp" />
     <ClCompile Include="collision_manager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="resources_manager.cpp" />
     <ClCompile Include="state_machine.cpp" />
   </ItemGroup>

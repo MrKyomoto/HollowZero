@@ -86,4 +86,6 @@ private:
 	const float SPEED_JUMP = 780.0f;
 	const float SPEED_ROLL = 800.0f;
 
+private:
+	void update_attack_dir(int x, int y);
 };
