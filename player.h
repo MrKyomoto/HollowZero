@@ -30,12 +30,24 @@ public:
 		return is_rolling;
 	}
 
+	void set_attacking(bool flag) {
+		is_attacking = flag;
+	}
+
+	bool get_attacking() const {
+		return is_attacking;
+	}
+
 	bool can_roll() const {
 		return is_roll_cd_comp && !is_rolling && is_roll_key_down;
 	}
 
 	bool can_jump() const {
 		return is_on_floor() && is_jump_key_down;
+	}
+
+	bool can_attack() const {
+		return is_attack_cd_comp && !is_attacking && is_attack_key_down;
 	}
 
 	int get_move_axis() const {

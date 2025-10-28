@@ -1,5 +1,8 @@
+#include "util.h"
 #include <graphics.h>
 #include "resources_manager.h"
+#include "collision_manager.h"
+#include "character_manager.h"
 #include <chrono>
 #include <thread>
 
@@ -26,6 +29,7 @@ int main(int argc, char** argv) {
 	try
 	{
 		ResourcesManager::instance()->load();
+		play_audio(_T("bgm"), true);
 	}
 	catch (const LPCTSTR id)
 	{
@@ -45,17 +49,22 @@ int main(int argc, char** argv) {
 	while (!is_quit) {
 		while (peekmessage(&msg)) {
 			// process msg
+			CharacterManager::instance()->on_input(msg);
 		}
 
 		steady_clock::time_point frame_start = steady_clock::now();
 		duration<float> delta = duration<float>(frame_start - last_tick);
 		// process update
+		CharacterManager::instance()->on_update(delta.count());
+		CollisionManager::instance()->process_collide();
 
 		setbkcolor(RGB(0, 0, 0));
 		cleardevice();
 
 		// process draw
 		draw_background();
+		CharacterManager::instance()->on_render();
+		CollisionManager::instance()->on_debug_render();
 
 		FlushBatchDraw();
 		last_tick = frame_start;

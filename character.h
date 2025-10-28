@@ -54,7 +54,7 @@ public:
 	}
 
 	bool is_on_floor() const {
-		return FLOOR_Y;
+		return position.y >= FLOOR_Y;
 	}
 
 	void make_invulnerable() {
@@ -62,11 +62,11 @@ public:
 		timer_invulnerable_status.restart();
 	}
 
-	virtual void on_input(const ExMessage& msg);
+	virtual void on_input(const ExMessage& msg) {};
 	virtual void on_update(float delta);
 	virtual void on_render();
 
-	virtual void on_hurt();
+	virtual void on_hurt() {};
 
 	void switch_state(const std::string& id);
 	void set_animation(const std::string& id);

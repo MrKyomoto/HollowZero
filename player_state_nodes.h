@@ -38,7 +38,7 @@ private:
 class PlayerFallState : public StateNode
 {
 public:
-	PlayerFallState();
+	PlayerFallState() = default;
 	~PlayerFallState() = default;
 
 	void on_enter() override;
@@ -49,7 +49,7 @@ public:
 class PlayerIdleState : public StateNode
 {
 public:
-	PlayerIdleState();
+	PlayerIdleState() = default;
 	~PlayerIdleState() = default;
 
 	void on_enter() override;
@@ -60,7 +60,7 @@ public:
 class PlayerJumpState : public StateNode
 {
 public:
-	PlayerJumpState();
+	PlayerJumpState() = default;
 	~PlayerJumpState() = default;
 
 	void on_enter() override;
@@ -85,7 +85,7 @@ private:
 class PlayerRunState : public StateNode
 {
 public:
-	PlayerRunState();
+	PlayerRunState() = default;
 	~PlayerRunState() = default;
 
 	void on_enter() override;

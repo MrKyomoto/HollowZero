@@ -26,8 +26,8 @@ public:
 		y += vec.y;
 	}
 
-	void operator+=(const Vector2& vec) {
-		x -+ vec.x;
+	void operator-=(const Vector2& vec) {
+		x -= vec.x;
 		y -= vec.y;
 	}
 

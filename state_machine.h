@@ -24,10 +24,3 @@ private:
 	std::unordered_map<std::string, StateNode*> state_pool;
 };
 
-StateMachine::StateMachine()
-{
-}
-
-StateMachine::~StateMachine()
-{
-}

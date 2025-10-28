@@ -1,5 +1,7 @@
 #include "player.h"
 #include "resources_manager.h"
+#include "player_state_nodes.h"
+#include <iostream>
 
 #include <cmath>
 
@@ -49,7 +51,7 @@ Player::Player() {
 		animation_attack_right.set_interval(0.05f);
 		animation_attack_right.set_loop(false);
 		animation_attack_right.set_anchor_mode(Animation::AnchorMode::BottomCentered);
-		animation_attack_left.add_frame(ResourcesManager::instance()->find_image("player_attack_right"), 5);
+		animation_attack_right.add_frame(ResourcesManager::instance()->find_image("player_attack_right"), 5);
 	}
 	{
 		AnimationGroup& animation_dead = animation_pool["dead"];
@@ -64,7 +66,7 @@ Player::Player() {
 		animation_dead_right.set_interval(0.1f);
 		animation_dead_right.set_loop(false);
 		animation_dead_right.set_anchor_mode(Animation::AnchorMode::BottomCentered);
-		animation_dead_left.add_frame(ResourcesManager::instance()->find_image("player_dead_right"), 6);
+		animation_dead_right.add_frame(ResourcesManager::instance()->find_image("player_dead_right"), 6);
 	}
 
 	{
@@ -80,7 +82,7 @@ Player::Player() {
 		animation_fall_right.set_interval(0.15f);
 		animation_fall_right.set_loop(false);
 		animation_fall_right.set_anchor_mode(Animation::AnchorMode::BottomCentered);
-		animation_fall_left.add_frame(ResourcesManager::instance()->find_image("player_fall_right"), 5);
+		animation_fall_right.add_frame(ResourcesManager::instance()->find_image("player_fall_right"), 5);
 	}
 	{
 		AnimationGroup& animation_idle = animation_pool["idle"];
@@ -95,7 +97,7 @@ Player::Player() {
 		animation_idle_right.set_interval(0.15f);
 		animation_idle_right.set_loop(false);
 		animation_idle_right.set_anchor_mode(Animation::AnchorMode::BottomCentered);
-		animation_idle_left.add_frame(ResourcesManager::instance()->find_image("player_idle_right"), 5);
+		animation_idle_right.add_frame(ResourcesManager::instance()->find_image("player_idle_right"), 5);
 	}
 	{
 		AnimationGroup& animation_jump = animation_pool["jump"];
@@ -110,7 +112,7 @@ Player::Player() {
 		animation_jump_right.set_interval(0.15f);
 		animation_jump_right.set_loop(false);
 		animation_jump_right.set_anchor_mode(Animation::AnchorMode::BottomCentered);
-		animation_jump_left.add_frame(ResourcesManager::instance()->find_image("player_jump_right"), 5);
+		animation_jump_right.add_frame(ResourcesManager::instance()->find_image("player_jump_right"), 5);
 	}
 	{
 		AnimationGroup& animation_roll = animation_pool["roll"];
@@ -125,22 +127,22 @@ Player::Player() {
 		animation_roll_right.set_interval(0.05f);
 		animation_roll_right.set_loop(false);
 		animation_roll_right.set_anchor_mode(Animation::AnchorMode::BottomCentered);
-		animation_roll_left.add_frame(ResourcesManager::instance()->find_image("player_roll_right"), 7);
+		animation_roll_right.add_frame(ResourcesManager::instance()->find_image("player_roll_right"), 7);
 	}
 	{
 		AnimationGroup& animation_run = animation_pool["run"];
 
 		Animation& animation_run_left = animation_run.left;
 		animation_run_left.set_interval(0.075f);
-		animation_run_left.set_loop(false);
+		animation_run_left.set_loop(true);
 		animation_run_left.set_anchor_mode(Animation::AnchorMode::BottomCentered);
 		animation_run_left.add_frame(ResourcesManager::instance()->find_image("player_run_left"), 10);
 
 		Animation& animation_run_right = animation_run.right;
 		animation_run_right.set_interval(0.075f);
-		animation_run_right.set_loop(false);
+		animation_run_right.set_loop(true);
 		animation_run_right.set_anchor_mode(Animation::AnchorMode::BottomCentered);
-		animation_run_left.add_frame(ResourcesManager::instance()->find_image("player_run_right"), 10);
+		animation_run_right.add_frame(ResourcesManager::instance()->find_image("player_run_right"), 10);
 	}
 
 	animation_slash_up.set_interval(0.07f);
@@ -181,6 +183,15 @@ Player::Player() {
 
 	{
 		// TODO: init FSM
+		state_machine.register_state("attack", new PlayerAttackState);
+		state_machine.register_state("dead", new PlayerDeadState);
+		state_machine.register_state("fall", new PlayerFallState);
+		state_machine.register_state("idle", new PlayerIdleState);
+		state_machine.register_state("jump", new PlayerJumpState);
+		state_machine.register_state("roll", new PlayerRollState);
+		state_machine.register_state("run", new PlayerRunState);
+
+		state_machine.set_entry("idle");
 	}
 }
 
@@ -196,23 +207,28 @@ void Player::on_input(const ExMessage& msg) {
 		case 0x41: // 'A'
 		case VK_LEFT:
 			is_left_key_down = true;
+			std::cout << "A\n";
 			break;
 		case 0x44: // 'D'
 		case VK_RIGHT:
 			is_right_key_down = true;
+			std::cout << "D\n";
 			break;
 		case 0x57: // 'W'
 		case VK_UP:
 		case VK_SPACE:
 			is_jump_key_down = true;
+			std::cout << "UP\n";
 			break;
 		case 0x53: // 'iS'
 		case VK_DOWN:
 			is_roll_key_down = true;
+			std::cout << "DOWN\n";
 			break;
 		default:
 			break;
 		}
+		break;
 	case WM_KEYUP:
 		switch (msg.vkcode)
 		{
@@ -229,19 +245,22 @@ void Player::on_input(const ExMessage& msg) {
 		case VK_SPACE:
 			is_jump_key_down = false;
 			break;
-		case 0x53: // 'iS'
+		case 0x53: // 'S'
 		case VK_DOWN:
 			is_roll_key_down = false;
 			break;
 		default:
 			break;
 		}
+		break;
 	case WM_LBUTTONDOWN:
 		is_attack_key_down = true;
 		update_attack_dir(msg.x, msg.y);
+		std::cout << "L-button down\n";
 		break;
 	case WM_LBUTTONUP:
 		is_attack_key_down = false;
+		std::cout << "L-button up\n";
 		break;
 	case WM_RBUTTONDOWN:
 		// TODO: 进入子弹时间
@@ -259,7 +278,7 @@ void Player::on_update(float delta) {
 		velocity.x = get_move_axis() * SPEED_RUN;
 	}
 
-	if (get_move_axis != 0) {
+	if (get_move_axis() != 0) {
 		is_facing_left = (get_move_axis() < 0);
 	}
 
@@ -347,7 +366,7 @@ void Player::update_attack_dir(int x, int y) {
 	if (angle >= -PI / 4 && angle < PI / 4) {
 		attack_dir = AttackDir::Right;
 	}
-	else if (angle >= PI / 4 && angle < PI / 4) {
+	else if (angle >= PI / 4 && angle < 3 * PI / 4) {
 		attack_dir = AttackDir::Down;
 	}
 	else if ((angle >= 3 * PI / 4 && angle <= PI) || (angle >= -PI && angle < -3 * PI / 4)) {

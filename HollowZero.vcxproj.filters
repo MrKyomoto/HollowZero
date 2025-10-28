@@ -114,6 +114,9 @@
     <ClInclude Include="player_state_nodes.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="character_manager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\background.png">
@@ -542,6 +545,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="player.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="character_manager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="player_state_nodes.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
