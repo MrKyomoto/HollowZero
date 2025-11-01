@@ -140,6 +140,7 @@
     <ClInclude Include="resources_manager.h" />
     <ClInclude Include="state_machine.h" />
     <ClInclude Include="state_node.h" />
+    <ClInclude Include="sword.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="util.h" />
     <ClInclude Include="vector2.h" />
@@ -292,6 +293,7 @@
     <ClCompile Include="player_state_nodes.cpp" />
     <ClCompile Include="resources_manager.cpp" />
     <ClCompile Include="state_machine.cpp" />
+    <ClCompile Include="sword.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

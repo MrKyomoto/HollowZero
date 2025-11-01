@@ -120,6 +120,9 @@
     <ClInclude Include="bullet_time_manager.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="sword.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\background.png">
@@ -557,6 +560,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="bullet_time_manager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sword.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
