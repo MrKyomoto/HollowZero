@@ -3,6 +3,7 @@
 #include "resources_manager.h"
 #include "collision_manager.h"
 #include "character_manager.h"
+#include "bullet_time_manager.h"
 #include <chrono>
 #include <thread>
 
@@ -54,8 +55,10 @@ int main(int argc, char** argv) {
 
 		steady_clock::time_point frame_start = steady_clock::now();
 		duration<float> delta = duration<float>(frame_start - last_tick);
+
 		// process update
-		CharacterManager::instance()->on_update(delta.count());
+		float scaled_delta = BulletTimeManager::instance()->on_update(delta.count());
+		CharacterManager::instance()->on_update(scaled_delta);
 		CollisionManager::instance()->process_collide();
 
 		setbkcolor(RGB(0, 0, 0));
