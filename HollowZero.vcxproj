@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="animation.h" />
     <ClInclude Include="atlas.h" />
+    <ClInclude Include="barb.h" />
     <ClInclude Include="bullet_time_manager.h" />
     <ClInclude Include="character.h" />
     <ClInclude Include="character_manager.h" />
@@ -284,6 +285,7 @@
     <Image Include="resources\ui_heart.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="barb.cpp" />
     <ClCompile Include="bullet_time_manager.cpp" />
     <ClCompile Include="character.cpp" />
     <ClCompile Include="character_manager.cpp" />

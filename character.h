@@ -57,6 +57,10 @@ public:
 		return position.y >= FLOOR_Y;
 	}
 
+	float get_floor_y() const {
+		return FLOOR_Y;
+	}
+
 	void make_invulnerable() {
 		is_invulnerable = true;
 		timer_invulnerable_status.restart();

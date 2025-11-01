@@ -123,6 +123,9 @@
     <ClInclude Include="sword.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="barb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\background.png">
@@ -563,6 +566,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="sword.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="barb.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
