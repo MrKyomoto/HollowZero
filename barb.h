@@ -49,7 +49,7 @@ private:
 	Animation* current_animation = nullptr;
 
 	Stage stage = Stage::Idle;
-	CollisionBox* collison_box = nullptr;
+	CollisionBox* collision_box = nullptr;
 
 private:
 	void on_break();

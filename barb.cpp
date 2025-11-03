@@ -19,13 +19,13 @@ Barb::Barb() {
 		is_valid = false;
 		});
 
-	collison_box = CollisionManager::instance()->create_collision_box();
+	collision_box = CollisionManager::instance()->create_collision_box();
 	// NOTE: barb是一个可以被玩家破坏的敌人对象
-	collison_box->set_layer_src(CollisionLayer::Enemy);
+	collision_box->set_layer_src(CollisionLayer::Enemy);
 	// NOTE: barb也是一个可以攻击玩家的对象
-	collison_box->set_layer_dst(CollisionLayer::Player);
-	collison_box->set_size({ 20, 20 });
-	collison_box->set_on_collide([&]() {
+	collision_box->set_layer_dst(CollisionLayer::Player);
+	collision_box->set_size({ 20, 20 });
+	collision_box->set_on_collide([&]() {
 		on_break();
 		});
 
@@ -50,7 +50,7 @@ Barb::Barb() {
 }
 
 Barb::~Barb() {
-	CollisionManager::instance()->destroy_collision_box(collison_box);
+	CollisionManager::instance()->destroy_collision_box(collision_box);
 }
 
 void Barb::on_update(float delta) {
@@ -84,9 +84,23 @@ void Barb::on_update(float delta) {
 	default:
 		break;
 	}
-	collison_box->set_position(current_position);
+	collision_box->set_position(current_position);
 
 	current_animation = (stage == Stage::Break ? &animation_break : &animation_loose);
 	current_animation->set_position(current_position);
 	current_animation->on_update(delta);
+}
+
+void Barb::on_render() {
+	current_animation->on_render();
+}
+
+void Barb::on_break() {
+	if (stage == Stage::Break) {
+		return;
+	}
+
+	stage = Stage::Break;
+	collision_box->set_enabled(false);
+	play_audio(_T("barb_break"), false);
 }
