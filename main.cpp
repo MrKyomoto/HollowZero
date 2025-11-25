@@ -32,7 +32,7 @@ static void draw_ramain_hp() {
 }
 int main(int argc, char** argv) {
 	using namespace std::chrono;
-	HWND hwnd = initgraph(1280, 720,0);
+	HWND hwnd = initgraph(1280, 720, EW_SHOWCONSOLE);
 	SetWindowText(hwnd, _T("Hollow Zero"));
 
 	try
@@ -76,7 +76,7 @@ int main(int argc, char** argv) {
 		// process draw
 		draw_background();
 		CharacterManager::instance()->on_render();
-		//CollisionManager::instance()->on_debug_render();
+		CollisionManager::instance()->on_debug_render();
 		draw_ramain_hp();
 
 		FlushBatchDraw();
