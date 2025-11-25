@@ -296,4 +296,155 @@ void EnemyRunState::on_exit() {
 	enemy->set_velocity({ 0,0 });
 }
 
+EnemySquatState::EnemySquatState() {
+	timer.set_one_shot(true);
+	timer.set_wait_time(0.5f);
+	timer.set_on_timeout([&]() {
+		Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+		enemy->switch_state("dash_on_floor");
+		});
+}
 
+void EnemySquatState::on_enter() {
+	CharacterManager::instance()->get_enemy()->set_animation("squat");
+
+	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+	enemy->set_facing_left(enemy->get_position().x > CharacterManager::instance()->get_player()->get_position().x);
+	timer.restart();
+}
+
+void EnemySquatState::on_update(float delta) {
+	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+
+	timer.on_update(delta);
+
+	if (enemy->get_hp() <= 0){
+		enemy->switch_state("dead");
+	}
+}
+
+EnemyThrowBarbState::EnemyThrowBarbState() {
+	timer.set_one_shot(true);
+	timer.set_wait_time(0.8f);
+	timer.set_on_timeout([&]() {
+		Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+		enemy->throw_barbs();
+		enemy->switch_state("idle");
+		});
+}
+
+void EnemyThrowBarbState::on_enter() {
+	CharacterManager::instance()->get_enemy()->set_animation("throw_barb");
+
+	timer.restart();
+
+	play_audio(_T("enemy_throw_barbs"), false);
+}
+
+void EnemyThrowBarbState::on_update(float delta) {
+	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+
+	timer.on_update(delta);
+
+	if (enemy->get_hp() <= 0) {
+		enemy->switch_state("dead");
+	}
+}
+
+EnemyThrowSilkState::EnemyThrowSilkState() {
+	timer.set_one_shot(true);
+	timer.set_wait_time(0.9f);
+	timer.set_on_timeout([&]() {
+		Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+		enemy->set_gravity_enabled(true);
+		enemy->set_throwing_silk(false);
+		if (!enemy->is_on_floor() && enemy->get_hp() > 5 && range_random(0, 100) <= 25) {
+			enemy->switch_state("aim");
+		}
+		else if (!enemy->is_on_floor()) {
+			enemy->switch_state("fall");
+		}
+		else {
+			enemy->switch_state("idle");
+		}
+		});
+}
+
+void EnemyThrowSilkState::on_enter() {
+	CharacterManager::instance()->get_enemy()->set_animation("throw_silk");
+	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+	enemy->set_gravity_enabled(false);
+	enemy->set_throwing_silk(true);
+	enemy->set_velocity({ 0,0 });
+	enemy->on_throw_silk();
+	timer.restart();
+
+	play_audio(_T("enemy_throw_slik"), false);
+}
+
+void EnemyThrowSilkState::on_update(float delta) {
+	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+	timer.on_update(delta);
+
+	if (enemy->get_hp() <= 0) {
+		enemy->switch_state("dead");
+	}
+}
+
+EnemyThrowSwordState::EnemyThrowSwordState() {
+	timer_throw.set_wait_time(0.65f);
+	timer_throw.set_one_shot(true);
+	timer_throw.set_on_timeout([&]() {
+		Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+		enemy->throw_sword();
+
+		play_audio(_T("enemy_throw_sword"), false);
+		});
+
+
+	timer_switch.set_wait_time(1.0f);
+	timer_switch.set_one_shot(true);
+	timer_switch.set_on_timeout([&]() {
+		Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+		int rand_num = range_random(0, 100);
+		if (enemy->get_hp() > 5) {
+			if (rand_num <= 50) {
+				enemy->switch_state("squat");
+			}
+			else if (rand_num <= 80) {
+				enemy->switch_state("jump");
+			}
+			else {
+				enemy->switch_state("idle");
+			}
+		}
+		else {
+			if (rand_num <= 50) {
+				enemy->switch_state("jump");
+			}
+			else if (rand_num <= 80) {
+				enemy->switch_state("throw_silk");
+			}
+			else {
+				enemy->switch_state("idle");
+			}
+		}
+		});
+}
+
+void EnemyThrowSwordState::on_enter() {
+	CharacterManager::instance()->get_enemy()->set_animation("throw_silk");
+	timer_throw.restart();
+	timer_switch.restart();
+}
+
+void EnemyThrowSwordState::on_update(float delta) {
+	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+
+	timer_throw.on_update(delta);
+	timer_switch.on_update(delta);
+
+	if (enemy->get_hp() <= 0) {
+		enemy->switch_state("dead");
+	}
+}

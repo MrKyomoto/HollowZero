@@ -115,7 +115,7 @@ void ResourcesManager::load() {
 	flip_atlas("enemy_run_left", "enemy_run_right");
 	flip_atlas("enemy_squat_left", "enemy_squat_right");
 	flip_atlas("enemy_throw_barb_left", "enemy_throw_barb_right");
-	flip_atlas("enemy_throw_silk_left", "enemy_thorw_silk_right");
+	flip_atlas("enemy_throw_silk_left", "enemy_throw_silk_right");
 	flip_atlas("enemy_throw_sword_left", "enemy_throw_sword_right");
 
 	flip_atlas("enemy_vfx_dash_in_air_left", "enemy_vfx_dash_in_air_right");

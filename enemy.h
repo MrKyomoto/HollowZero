@@ -48,7 +48,7 @@ public:
 	}
 
 	void throw_barbs();
-	void thorw_sword();
+	void throw_sword();
 
 	void on_dash();
 	void on_throw_silk();

@@ -334,7 +334,7 @@ void Enemy::throw_barbs() {
 	}
 }
 
-void Enemy::thorw_sword() {
+void Enemy::throw_sword() {
 	Sword* new_sword = new Sword(get_logic_center(), is_facing_left);
 	sword_list.push_back(new_sword);
 }
