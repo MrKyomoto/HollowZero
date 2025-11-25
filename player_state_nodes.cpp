@@ -14,7 +14,7 @@ PlayerAttackState::PlayerAttackState() {
 }
 
 void PlayerAttackState::on_enter() {
-	std::cout << "attack state\n";
+	//std::cout << "attack state\n";
 	CharacterManager::instance()->get_player()->set_animation("attack");
 
 	Player* player = (Player*)CharacterManager::instance()->get_player();
@@ -62,7 +62,7 @@ void PlayerAttackState::on_update(float delta) {
 }
 
 void PlayerAttackState::on_exit() {
-	std::cout << "quit attack state\n";
+	//std::cout << "quit attack state\n";
 	Player* player = (Player*)CharacterManager::instance()->get_player();
 	player->get_hit_box()->set_enabled(false);
 	player->set_attacking(false);
@@ -99,7 +99,7 @@ PlayerDeadState::PlayerDeadState() {
 	timer.set_wait_time(2.0f);
 	timer.set_one_shot(true);
 	timer.set_on_timeout([&]() {
-		MessageBox(GetHWnd(), _T("Opps...\nSomething seems to be wrong."), _T("Challenge Failed!"), MB_OK);
+		MessageBox(GetHWnd(), _T("Oops...\nSomething seems to be wrong."), _T("Challenge Failed!"), MB_OK);
 		exit(0);
 		});
 }
@@ -115,7 +115,7 @@ void PlayerDeadState::on_update(float delta) {
 }
 
 void PlayerFallState::on_enter() {
-	std::cout << "fall state\n";
+	//std::cout << "fall state\n";
 	CharacterManager::instance()->get_player()->set_animation("fall");
 }
 
@@ -138,7 +138,7 @@ void PlayerFallState::on_update(float delta) {
 }
 
 void PlayerIdleState::on_enter() {
-	std::cout << "idle state\n";
+	//std::cout << "idle state\n";
 	CharacterManager::instance()->get_player()->set_animation("idle");
 }
 
@@ -239,7 +239,7 @@ void PlayerRollState::on_exit() {
 }
 
 void PlayerRunState::on_enter(){
-	std::cout << "run state\n";
+	//std::cout << "run state\n";
 	CharacterManager::instance()->get_player()->set_animation("run");
 
 	play_audio(_T("player_run"), true);
@@ -266,6 +266,6 @@ void PlayerRunState::on_update(float delta){
 }
 
 void PlayerRunState::on_exit() {
-	std::cout << "quit run state\n";
+	//std::cout << "quit run state\n";
 	stop_audio(_T("player_run"));
 }

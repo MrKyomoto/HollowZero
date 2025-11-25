@@ -32,13 +32,12 @@ static void draw_ramain_hp() {
 }
 int main(int argc, char** argv) {
 	using namespace std::chrono;
-	HWND hwnd = initgraph(1280, 720, EW_SHOWCONSOLE);
+	HWND hwnd = initgraph(1280, 720,0);
 	SetWindowText(hwnd, _T("Hollow Zero"));
 
 	try
 	{
 		ResourcesManager::instance()->load();
-		play_audio(_T("bgm"), true);
 	}
 	catch (const LPCTSTR id)
 	{
@@ -47,6 +46,8 @@ int main(int argc, char** argv) {
 		MessageBox(hwnd, err_msg, _T("×ÊÔ´¼ÓÔØÊ§°Ü"), MB_OK | MB_ICONERROR);
 		return -1;
 	}
+
+	play_audio(_T("bgm"), true);
 	const nanoseconds frame_duration(1000000000 / 144);
 	steady_clock::time_point last_tick = steady_clock::now();
 
@@ -75,7 +76,7 @@ int main(int argc, char** argv) {
 		// process draw
 		draw_background();
 		CharacterManager::instance()->on_render();
-		CollisionManager::instance()->on_debug_render();
+		//CollisionManager::instance()->on_debug_render();
 		draw_ramain_hp();
 
 		FlushBatchDraw();

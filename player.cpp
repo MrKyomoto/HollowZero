@@ -208,23 +208,23 @@ void Player::on_input(const ExMessage& msg) {
 		case 0x41: // 'A'
 		case VK_LEFT:
 			is_left_key_down = true;
-			std::cout << "A\n";
+			//std::cout << "A\n";
 			break;
 		case 0x44: // 'D'
 		case VK_RIGHT:
 			is_right_key_down = true;
-			std::cout << "D\n";
+			//std::cout << "D\n";
 			break;
 		case 0x57: // 'W'
 		case VK_UP:
 		case VK_SPACE:
 			is_jump_key_down = true;
-			std::cout << "UP\n";
+			//std::cout << "UP\n";
 			break;
-		case 0x53: // 'iS'
+		case 0x53: // 'S'
 		case VK_DOWN:
 			is_roll_key_down = true;
-			std::cout << "DOWN\n";
+			//std::cout << "DOWN\n";
 			break;
 		default:
 			break;
@@ -257,11 +257,11 @@ void Player::on_input(const ExMessage& msg) {
 	case WM_LBUTTONDOWN:
 		is_attack_key_down = true;
 		update_attack_dir(msg.x, msg.y);
-		std::cout << "L-button down\n";
+		//std::cout << "L-button down\n";
 		break;
 	case WM_LBUTTONUP:
 		is_attack_key_down = false;
-		std::cout << "L-button up\n";
+		//std::cout << "L-button up\n";
 		break;
 	case WM_RBUTTONDOWN:
 		// TODO: 进入子弹时间

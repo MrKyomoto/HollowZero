@@ -1,6 +1,9 @@
 #include "enemy.h"
 #include "character_manager.h"
 #include "enemy_state_nodes.h"
+#include <iostream>
+
+using std::cout;
 
 // NOTE: aim is pre state of dash
 EnemyAimState::EnemyAimState() {
@@ -14,6 +17,7 @@ EnemyAimState::EnemyAimState() {
 }
 
 void EnemyAimState::on_enter() {
+	//cout << "in aim state\n";
 	CharacterManager::instance()->get_enemy()->set_animation("aim");
 
 	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
@@ -34,6 +38,7 @@ void EnemyAimState::on_update(float delta) {
 }
 
 void EnemyDashInAirState::on_enter() {
+	//cout << "in dash in air state\n";
 	CharacterManager::instance()->get_enemy()->set_animation("dash_in_air");
 
 	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
@@ -59,6 +64,7 @@ void EnemyDashInAirState::on_update(float delta) {
 }
 
 void EnemyDashInAirState::on_exit() {
+	//cout << "QUIT dash in air state\n";
 	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
 
 	enemy->set_gravity_enabled(true);
@@ -75,6 +81,7 @@ EnemyDashOnFloorState::EnemyDashOnFloorState() {
 }
 
 void EnemyDashOnFloorState::on_enter() {
+	//cout << "in dash on floor state\n";
 	CharacterManager::instance()->get_enemy()->set_animation("dash_on_floor");
 
 	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
@@ -100,11 +107,13 @@ void EnemyDashOnFloorState::on_update(float delta) {
 }
 
 void EnemyDeadState::on_enter() {
+	//cout << "in dead state\n";
 	MessageBox(GetHWnd(), _T("Well, it works."), _T("Vector!"), MB_OK);
 	exit(0);
 }
 
 void EnemyFallState::on_enter() {
+	//cout << "in fall state\n";
 	CharacterManager::instance()->get_enemy()->set_animation("fall");
 }
 
@@ -179,6 +188,7 @@ EnemyIdleState::EnemyIdleState() {
 }
 
 void EnemyIdleState::on_enter() {
+	//cout << "in idle state\n";
 	CharacterManager::instance()->get_enemy()->set_animation("idle");
 
 	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
@@ -212,12 +222,16 @@ void EnemyIdleState::on_update(float delta) {
 }
 
 void EnemyIdleState::on_exit() {
+	//cout << "QUIT idle state\n";
 	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
 	enemy->set_facing_left(enemy->get_position().x > CharacterManager::instance()->get_player()->get_position().x);
 }
 
 void EnemyJumpState::on_enter() {
+	//cout << "in jump state\n";
 	CharacterManager::instance()->get_enemy()->set_animation("jump");
+	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+	enemy->set_velocity({ enemy->get_velocity().x, -SPEED_JUMP});
 }
 
 void EnemyJumpState::on_update(float delta) {
@@ -228,7 +242,7 @@ void EnemyJumpState::on_update(float delta) {
 	}
 	else if (enemy->get_velocity().y > 0) {
 		int rand_num = range_random(0, 100);
-		if (enemy->get_hp() <= 5) {
+		if (enemy->get_hp() > 5) {
 			if (rand_num <= 50) {
 				enemy->switch_state("aim");
 			}
@@ -254,6 +268,7 @@ void EnemyJumpState::on_update(float delta) {
 }
 
 void EnemyRunState::on_enter() {
+	//cout << "in run state\n";
 	CharacterManager::instance()->get_enemy()->set_animation("run");
 
 	play_audio(_T("enemy_run"), true);
@@ -292,6 +307,7 @@ void EnemyRunState::on_update(float delta) {
 }
 
 void EnemyRunState::on_exit() {
+	//cout << "QUIT run state\n";
 	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
 	enemy->set_velocity({ 0,0 });
 }
@@ -306,6 +322,7 @@ EnemySquatState::EnemySquatState() {
 }
 
 void EnemySquatState::on_enter() {
+	//cout << "in squat state\n";
 	CharacterManager::instance()->get_enemy()->set_animation("squat");
 
 	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
@@ -334,6 +351,7 @@ EnemyThrowBarbState::EnemyThrowBarbState() {
 }
 
 void EnemyThrowBarbState::on_enter() {
+	//cout << "in thorw barb state\n";
 	CharacterManager::instance()->get_enemy()->set_animation("throw_barb");
 
 	timer.restart();
@@ -371,6 +389,7 @@ EnemyThrowSilkState::EnemyThrowSilkState() {
 }
 
 void EnemyThrowSilkState::on_enter() {
+	//cout << "in thorw silk state\n";
 	CharacterManager::instance()->get_enemy()->set_animation("throw_silk");
 	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
 	enemy->set_gravity_enabled(false);
@@ -433,6 +452,7 @@ EnemyThrowSwordState::EnemyThrowSwordState() {
 }
 
 void EnemyThrowSwordState::on_enter() {
+	//cout << "in thorw sword state\n";
 	CharacterManager::instance()->get_enemy()->set_animation("throw_silk");
 	timer_throw.restart();
 	timer_switch.restart();

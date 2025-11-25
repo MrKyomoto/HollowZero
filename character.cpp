@@ -12,7 +12,7 @@ Character::Character() {
 		});
 
 	timer_invulnerable_blink.set_wait_time(0.075f);
-	timer_invulnerable_blink.set_one_shot(true);
+	timer_invulnerable_blink.set_one_shot(false);
 	timer_invulnerable_blink.set_on_timeout([&]() {
 		is_blink_invisible = !is_blink_invisible;
 		});
