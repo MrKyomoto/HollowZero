@@ -118,3 +118,182 @@ void EnemyFallState::on_update(float delta) {
 		enemy->switch_state("idle");
 	}
 }
+
+EnemyIdleState::EnemyIdleState() {
+	timer.set_one_shot(true);
+	timer.set_on_timeout([&]() {
+		Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+
+		int rand_num = range_random(0, 100);
+		if (enemy->get_hp() > 5) {
+			// NOTE: 25% chance
+			if (rand_num <= 25) {
+				if (!enemy->is_on_floor()) {
+					enemy->switch_state("fall");
+				}
+				else {
+					enemy->switch_state("jump");
+				}
+			}
+			else if (rand_num <= 50) {
+				if (!enemy->is_on_floor()) {
+					enemy->switch_state("fall");
+				}
+				else {
+					enemy->switch_state("run");
+				}
+			}
+			else if (rand_num <= 80) {
+				enemy->switch_state("squat");
+			}
+			else if (rand_num <= 90) {
+				enemy->switch_state("throw_silk");
+			}
+			else {
+				enemy->switch_state("throw_sword");
+			}
+		}
+		else {
+			if (rand_num <= 25) {
+				if (!enemy->is_on_floor()) {
+					enemy->switch_state("fall");
+				}
+				else {
+					enemy->switch_state("jump");
+				}
+			}
+			else if (rand_num <= 60) {
+				enemy->switch_state("throw_sword");
+			}
+			else if (rand_num <= 70) {
+				enemy->switch_state("throw_silk");
+			}
+			else if (rand_num <= 90) {
+				enemy->switch_state("throw_barb");
+			}
+			else {
+				enemy->switch_state("squat");
+			}
+		}
+		});
+}
+
+void EnemyIdleState::on_enter() {
+	CharacterManager::instance()->get_enemy()->set_animation("idle");
+
+	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+	enemy->set_velocity({ 0,0 });
+	
+	float wait_time = 0;
+	if (enemy->get_hp() > 5) {
+		// 0.0s ~ 0.5s
+		wait_time = range_random(0, 2) * 0.25f;
+	}
+	else {
+		// 0.0s ~ 0.25s
+		wait_time = range_random(0, 1) * 0.25f;
+	}
+
+	timer.set_wait_time(wait_time);
+	timer.restart();
+}
+
+void EnemyIdleState::on_update(float delta) {
+	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+
+	timer.on_update(delta);
+
+	if (enemy->get_hp() <= 0) {
+		enemy->switch_state("dead");
+	}
+	else if (enemy->get_velocity().y > 0) {
+		enemy->switch_state("fall");
+	}
+}
+
+void EnemyIdleState::on_exit() {
+	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+	enemy->set_facing_left(enemy->get_position().x > CharacterManager::instance()->get_player()->get_position().x);
+}
+
+void EnemyJumpState::on_enter() {
+	CharacterManager::instance()->get_enemy()->set_animation("jump");
+}
+
+void EnemyJumpState::on_update(float delta) {
+	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+
+	if (enemy->get_hp() <= 0) {
+		enemy->switch_state("dead");
+	}
+	else if (enemy->get_velocity().y > 0) {
+		int rand_num = range_random(0, 100);
+		if (enemy->get_hp() <= 5) {
+			if (rand_num <= 50) {
+				enemy->switch_state("aim");
+			}
+			else if (rand_num <= 80) {
+				enemy->switch_state("fall");
+			}
+			else {
+				enemy->switch_state("throw_silk");
+			}
+		}
+		else {
+			if (rand_num <= 50) {
+				enemy->switch_state("throw_silk");
+			}
+			else if (rand_num <= 80) {
+				enemy->switch_state("fall");
+			}
+			else {
+				enemy->switch_state("aim");
+			}
+		}
+	}
+}
+
+void EnemyRunState::on_enter() {
+	CharacterManager::instance()->get_enemy()->set_animation("run");
+
+	play_audio(_T("enemy_run"), true);
+}
+
+void EnemyRunState::on_update(float delta) {
+	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+
+	const Vector2& pos_enemy = enemy->get_position();
+	const Vector2& pos_player = CharacterManager::instance()->get_player()->get_position();
+	enemy->set_velocity({ pos_enemy.x < pos_player.x ? SPEED_RUN : -SPEED_RUN, 0 });
+
+	if (enemy->get_hp() <= 0) {
+		enemy->switch_state("dead");
+	}
+	else if (abs(pos_enemy.x - pos_player.x) <= MIN_DIS) {
+		int rand_num = range_random(0, 100);
+		if (enemy->get_hp() > 5) {
+			if (rand_num <= 75) {
+				enemy->switch_state("squat");
+			}
+			else {
+				enemy->switch_state("throw_silk");
+			}
+		}
+		else {
+			if (rand_num <= 75) {
+				enemy->switch_state("throw_silk");
+			}
+			else {
+				enemy->switch_state("squat");
+			}
+		}
+		stop_audio(_T("enemy_run"));
+	}
+}
+
+void EnemyRunState::on_exit() {
+	Enemy* enemy = (Enemy*)CharacterManager::instance()->get_enemy();
+	enemy->set_velocity({ 0,0 });
+}
+
+
